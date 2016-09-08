@@ -251,7 +251,7 @@ void MainWindow::closeEvent(QCloseEvent*) {
 }
 
 MainWindow::~MainWindow() {
-    delete tcpClient;
+    //delete tcpClient;
     delete settings;
     delete generalSettings;
     delete ui;

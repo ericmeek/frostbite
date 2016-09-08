@@ -38,9 +38,9 @@ void MacroDialog::clearMacros() {
 }
 
 void MacroDialog::loadSettings() {
-    this->buildKeys("alt", Qt::AltModifier, 0x41, 0x5a);
+    this->buildKeys("alt", Qt::AltModifier, 0x2c, 0x5a);
     this->loadKeys("alt", ui->altTable);
-    this->buildKeys("ctrl", Qt::ControlModifier, 0x41, 0x5a);
+    this->buildKeys("ctrl", Qt::ControlModifier, 0x2c, 0x5a);
     this->loadKeys("ctrl", ui->ctrlTable);
     this->buildKeys("function", Qt::NoModifier, 0x01000030, 0x0100003b);
     this->loadKeys("function", ui->functionTable);

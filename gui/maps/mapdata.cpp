@@ -5,7 +5,7 @@ MapData::MapData(MapReader* parent) : QObject(parent) {
 }
 
 QString MapData::getZones() {
-    return mapReader->getZones().keys().join(",");
+    return QStringList(mapReader->getZones().keys()).join(",");
 }
 
 void MapData::setRoom(RoomNode roomNode) {

@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QHash>
+#include <QStringList>
 
 #include <maps/mapposition.h>
 #include <maps/mapdestination.h>

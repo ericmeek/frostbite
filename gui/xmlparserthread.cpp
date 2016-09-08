@@ -255,7 +255,7 @@ void XmlParserThread::filterDataTags(QDomElement root, QDomNode n) {
             qSort(directions);
 
             QString text = GameDataContainer::Instance()->getRoomName() +
-                    GameDataContainer::Instance()->getRoomDesc() + directions.join("");
+                    GameDataContainer::Instance()->getRoomDesc() + QStringList(directions).join("");
 
             QString hash = TextUtils::Instance()->toHash(text);
 

@@ -51,6 +51,7 @@ private:
     QString game;
     QString character;
     bool api;
+    bool lich;
 
 signals:
     void characterFound(QString, QString);
@@ -81,6 +82,7 @@ public slots:
     void authError();
     void writeSettings();
     void writeModeSettings();
+    void connectToLich(QString, QString);
 };
 
 

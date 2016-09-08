@@ -117,7 +117,7 @@ void TcpClient::connectApi(QString host, QString port, QString user, QString pas
 
 void TcpClient::connectToHost(QString sessionHost, QString sessionPort, QString sessionKey) {
     this->api = false;
-
+    this->lich = false;
     windowFacade->writeGameWindow("Connecting ...");
 
     mainWindow->connectEnabled(false);
@@ -127,6 +127,20 @@ void TcpClient::connectToHost(QString sessionHost, QString sessionPort, QString 
 
     tcpSocket->write("<c>" + sessionKey.toLocal8Bit() + "\n" +
                      "<c>/FE:STORMFRONT /VERSION:1.0.1.26 /P:WIN_XP /XML\n");
+}
+
+void TcpClient::connectToLich(QString lichHost, QString lichPort) {
+    this->api = false;
+    this->lich = true;
+    windowFacade->writeGameWindow("Connecting ...");
+
+    mainWindow->connectEnabled(false);
+
+    tcpSocket->connectToHost(lichHost, lichPort.toInt());
+    tcpSocket->waitForConnected();
+
+    //tcpSocket->write("<c>" + sessionKey.toLocal8Bit() + "\n" +
+    //                 "<c>/FE:STORMFRONT /VERSION:1.0.1.26 /P:WIN_XP /XML\n");
 }
 
 void TcpClient::disconnectedFromHost() {
@@ -183,7 +197,13 @@ void TcpClient::socketReadyRead() {
 
 void TcpClient::writeCommand(QString cmd) {
     //qDebug() << QTime::currentTime().toString("hh:mm:ss.zzz");
-    tcpSocket->write("<c>" + cmd.append("\n").toLocal8Bit());
+
+    if(this->lich) {
+        tcpSocket->write(cmd.append("\n").toLocal8Bit());
+    } else {
+        tcpSocket->write("<c>" + cmd.append("\n").toLocal8Bit());
+    }
+
     tcpSocket->flush();
 }
 

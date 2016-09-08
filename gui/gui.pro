@@ -95,7 +95,8 @@ SOURCES += main.cpp\
     gridhighlighterthread.cpp \
     scriptapiserver.cpp \
     apisettings.cpp \
-    authlogger.cpp
+    authlogger.cpp \
+    lichconnect.cpp
 
 HEADERS  += mainwindow.h \
     clientsettings.h \
@@ -161,7 +162,8 @@ HEADERS  += mainwindow.h \
     gridhighlighterthread.h \
     scriptapiserver.h \
     apisettings.h \
-    authlogger.h
+    authlogger.h \
+    lichconnect.h
 
 FORMS    += mainwindow.ui \
     macrodialog.ui \
@@ -170,7 +172,8 @@ FORMS    += mainwindow.ui \
     aboutdialog.ui \
     connectwizard.ui \
     scripteditdialog.ui \
-    profileadddialog.ui
+    profileadddialog.ui \
+    lichconnect.ui
 
 RESOURCES += \
     toolbar.qrc \

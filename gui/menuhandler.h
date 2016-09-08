@@ -14,6 +14,7 @@
 #include <scripteditdialog.h>
 #include <profileadddialog.h>
 #include <clientsettings.h>
+#include <lichconnect.h>
 
 class ConnectWizard;
 class MainWindow;
@@ -22,6 +23,7 @@ class AppearanceDialog;
 class AboutDialog;
 class ScriptEditDialog;
 class ProfileAddDialog;
+class LichConnect;
 
 class MenuHandler : public QObject {
     Q_OBJECT
@@ -45,6 +47,7 @@ private:
     AboutDialog* aboutDialog;
     ScriptEditDialog* scriptEditDialog;
     ProfileAddDialog* profileAddDialog;
+    LichConnect* lichConnect;
 
     QMenu* profilesMenu;
     QAction* action;

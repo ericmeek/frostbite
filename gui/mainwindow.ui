@@ -159,7 +159,7 @@ QDialogButtonBox {
      <x>0</x>
      <y>0</y>
      <width>1091</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -173,6 +173,7 @@ QDialogButtonBox {
      <bool>false</bool>
     </property>
     <addaction name="actionConnect"/>
+    <addaction name="actionLichConnect"/>
     <addaction name="actionDisconnect"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
@@ -418,6 +419,11 @@ QDialogButtonBox {
    </property>
    <property name="text">
     <string>Auth</string>
+   </property>
+  </action>
+  <action name="actionLichConnect">
+   <property name="text">
+    <string>Lich Connect</string>
    </property>
   </action>
  </widget>

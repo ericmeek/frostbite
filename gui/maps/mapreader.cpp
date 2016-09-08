@@ -280,7 +280,7 @@ void MapReader::roomToHash() {
     foreach(QString desc, descList) {
         TextUtils::Instance()->plainToHtml(desc);
 
-        QString text = "[" + mapNode->getName() + "]" + desc + list.join("");
+        QString text = "[" + mapNode->getName() + "]" + desc + QStringList(list).join("");
         QString hash = TextUtils::Instance()->toHash(text);
 
         /*if(mapNode->getId() == 100) {

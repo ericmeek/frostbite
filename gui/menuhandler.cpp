@@ -11,6 +11,7 @@ MenuHandler::MenuHandler(QObject *parent) : QObject(parent) {
     aboutDialog = new AboutDialog(qobject_cast<QWidget *>(parent));
     scriptEditDialog = new ScriptEditDialog(qobject_cast<QWidget *>(parent));
     profileAddDialog = new ProfileAddDialog();
+    lichConnect = new LichConnect(qobject_cast<QWidget *>(parent));
 
     connect(profileAddDialog, SIGNAL(updateMenu()), this, SLOT(loadProfilesMenu()));
 
@@ -76,6 +77,8 @@ void MenuHandler::menuTriggered(QAction* action) {
         clientSettings->setParameter("Logging/auth", action->isChecked());
     } else if(action->objectName() == "actionWindowSave") {
         mainWindow->saveWindow();
+    } else if (action->objectName() == "actionLichConnect") {
+        lichConnect->show();
     }
 }
 
